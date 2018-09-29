@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>AdminLTE App Vision 1.0</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<script src="js/jquery-3.3.1.js"></script>
+	<script>
+
+		// Letras
+
+		function soloLetras(e) {
+			key = e.keyCode || e.which;
+			tecla = String.fromCharCode(key).toLowerCase();
+			letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+			especiales = [8, 37, 39, 46];
+
+			tecla_especial = false
+			for(var i in especiales) {
+				if(key == especiales[i]) {
+					tecla_especial = true;
+					break;
+				}
+			}
+
+			if(letras.indexOf(tecla) == -1 && !tecla_especial)
+				return false;
+		}
+
+	</script>
+	<script>
+
+		// Números
+
+		function soloNumeros(e) {
+			key = e.keyCode || e.which;
+			tecla = String.fromCharCode(key).toLowerCase();
+			numeros = " 0123456789";
+			especiales = [8, 37, 39, 46];
+
+			tecla_especial = false
+			for(var i in especiales) {
+				if(key == especiales[i]) {
+					tecla_especial = true;
+					break;
+				}
+			}
+
+			if(numeros.indexOf(tecla) == -1 && !tecla_especial)
+				return false;
+		}
+
+	</script>
+</head>
+<body>
+	<main class="crear-cuenta">
+		<div class="contenedor">
+			<div class="form_contenedor">
+				<form action="" class="formAula">
+					<div class="barra_menu_desplegar" id="barra_menu_desplegar">
+						<h2>Crear Cuenta</h2>
+						<div class="cont_form">
+							<div class="cont_row">
+								<label for="" class="lbl_form">DNI:</label><input type="number" onkeypress="return soloNumeros(event)" onblur="limpiaNumeros()" id="numeros" maxlength="8" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" name="txtOrden" placeholder="DNI" autofocus="">
+							</div>
+							<div class="cont_row">
+								<label for="" class="lbl_form">Nombres:</label><input type="text" onkeypress="return soloLetras(event)" onblur="limpia()" id="letras" name="txtNom" placeholder="Nombres">
+							</div>
+							<div class="cont_row">
+								<label for="" class="lbl_form">Apellido Paterno:</label><input type="text" onkeypress="return soloLetras(event)" onblur="limpia()" id="letras" name="txtApePat" placeholder="Apellido Paterno">
+							</div>
+							<div class="cont_row">
+								<label for="" class="lbl_form">Apellido Materno:</label><input type="text" onkeypress="return soloLetras(event)" onblur="limpia()" id="letras" name="txtApeMat" placeholder="Apellido Materno">
+							</div>
+							<div class="cont_row">
+								<label for="" class="lbl_form">Contraseña:</label><input type="text" name="txtContra" placeholder="Contraseña">
+							</div>
+							<div class="cont_btns_form">
+								<input type="submit" name="btnCrearCuenta" value="Crear Cuenta"class="btnRegistrar">
+							</div>
+							<div class="btn_login">
+								<p>¿Ya tienes una cuenta?</p><a href="login.jsp">Iniciar Sesión</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

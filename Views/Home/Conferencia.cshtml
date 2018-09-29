@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>AdminLTE App Vision 1.0</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/menu-responsive.js"></script>
+	<script src="js/user-responsive.js"></script>
+	<script src="js/form-toggle.js"></script>
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			alert("The paragraph was clicked.");
+			$('#cboIdPab').change(function() {
+				SeleccionandoCombo(this,'cboIdAula');
+			});
+			
+			function SeleccionandoCombo(comboPab, comboAula) {
+				comboAula = document.getElementById(comboAula);
+				LimpiarCombo(comboAula);
+				if (comboPab.options[comboPab.selectedIndex].value != "") {
+					comboAula.disabled = true;
+					$.ajax({
+						url: 'servletconferencia2.do',
+						type: 'get',
+						dataType: 'json',
+						data: (valor : comboPab.options[comboPab.selectedIndex].value),
+						success:function (resultado){
+							var myObject = eval('(' + resultado + ')');
+							LlenarCombo(myObject, comboAula);
+							comboPab.disabled = false;
+							comboAula.disabled = false;
+						}
+					});
+				}
+			}
+			
+			function LimpiarCombo(combo){
+				while(combo.length > 0) {
+					combo.remove(combo.length-1);
+				}
+			}
+			
+			function LlenarCombo(json, combo) {
+				combo.options[0] = new Option('Selecciona un aula',' ');
+				for(var i=0; i<json.length ; i++){
+					combo.options[combo.length] = new Option(json[i].descaula, json[i].idaula);
+				}
+			}
+
+			// Desplegar formulario
+
+			
+		});
+	</script>
+	<script>
+
+		// Letras
+
+		function soloLetras(e) {
+			key = e.keyCode || e.which;
+			tecla = String.fromCharCode(key).toLowerCase();
+			letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+			especiales = [8, 37, 39, 46];
+
+			tecla_especial = false
+			for(var i in especiales) {
+				if(key == especiales[i]) {
+					tecla_especial = true;
+					break;
+				}
+			}
+
+			if(letras.indexOf(tecla) == -1 && !tecla_especial)
+				return false;
+		}
+
+		function limpia() {
+			var val = document.getElementById("letras").value;
+			var tam = val.length;
+			for(i = 0; i < tam; i++) {
+				if(!isNaN(val[i]))
+					document.getElementById("letras").value = '';
+			}
+		}
+
+	</script>
+	<script>
+
+		// Números
+
+		function soloNumeros(e) {
+			key = e.keyCode || e.which;
+			tecla = String.fromCharCode(key).toLowerCase();
+			numeros = " 0123456789";
+			especiales = [8, 37, 39, 46];
+
+			tecla_especial = false
+			for(var i in especiales) {
+				if(key == especiales[i]) {
+					tecla_especial = true;
+					break;
+				}
+			}
+
+			if(numeros.indexOf(tecla) == -1 && !tecla_especial)
+				return false;
+		}
+
+		function limpiaNumeros() {
+			var val = document.getElementById("numeros").value;
+			var tam = val.length;
+			for(i = 0; i < tam; i++) {
+				if(!isNaN(val[i]))
+					document.getElementById("numeros").value = '';
+			}
+		}
+
+	</script>
+	<script>
+		// Números
+
+		function soloNumeros(e) {
+			key = e.keyCode || e.which;
+			tecla = String.fromCharCode(key).toLowerCase();
+			numeros = " 0123456789";
+			especiales = [8, 37, 39, 46];
+
+			tecla_especial = false
+			for(var i in especiales) {
+				if(key == especiales[i]) {
+					tecla_especial = true;
+					break;
+				}
+			}
+
+			if(numeros.indexOf(tecla) == -1 && !tecla_especial)
+				return false;
+		}
+
+		function limpiaNumeros() {
+			var val = document.getElementById("txtCodCarrera").value;
+			var tam = val.length;
+			for(i = 0; i < tam; i++) {
+				if(!isNaN(val[i]))
+					document.getElementById("txtCodCarrera").value = '';
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+	<header>
+		<div class="contenedor">
+			<div class="titulo_admin">
+				<nav class="nav_responsive">
+					<a id="resp-menu" class="responsive-menu" href="#"><i class="fa fa-reorder"></i> </a>    
+					<ul class="menu">
+						<li><a asp-area="" asp-controller="Home" asp-action="Administrador">Administrador</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Alumno" >Alumno</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Aula" >Aula</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Carrera">Carrera</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Conferencia" class="menu_activo">Conferencia</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Empresa">Empresa</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Evento">Evento</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Documento_expositor">Documento Expositor</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Expositor">Expositor</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Pabellon_Aula">Pabellón-Aula</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Pabellon">Pabellón</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Requisitos_Conferencia">Requisitos Conferencia</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Requisitos_Taller">Requisitos Taller</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Taller">Taller</a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="Tipo_Documento">Tipo de Documento</a></li>
+					</ul>
+				</nav>
+				<h2><b>AdminLTE</b> App Visión</h2>
+				<li class="usuario_responsive">
+					<a href="" id="resp-user" class="resp-user"><i class="fa fa-user"></i><h3> User</h3></a>
+					<div class="info_user_responsive">
+						<div class="triangulo_arriba"></div>
+						<h3>User</h3>
+						<h4>Administrador</h4>
+						<h4 class="estado"><i class="fa fa-circle verde" aria-hidden="true"></i>Online</h4>
+						<div class="btn_cerrar-sesion">
+							
+                            
+
+                            
+							<i class="fa fa-sign-out"></i>
+						</div>
+					</div>
+				</li>
+			</div>
+		</div>
+
+	</header>
+
+	<main>
+		<div class="contenedor">
+
+			<nav>
+				<li class="usuario">
+					<h3>User</h3>
+					<h4 class="estado"><i class="fa fa-circle verde" aria-hidden="true"></i>Online</h4>
+					<div class="btn_cerrar-sesion">
+						
+                        
+
+						<i class="fa fa-sign-out"></i>
+					</div>
+				</li>
+				<li class="titulo-menu">Menú</li>
+				<ul>
+					<li><a asp-area="" asp-controller="Home" asp-action="Administrador">Administrador</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Alumno" >Alumno</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Aula" >Aula</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Carrera">Carrera</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Conferencia" class="menu_activo">Conferencia</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Empresa">Empresa</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Evento">Evento</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Documento_expositor">Documento Expositor</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Expositor">Expositor</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Pabellon_Aula">Pabellón-Aula</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Pabellon">Pabellón</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Requisitos_Conferencia">Requisitos Conferencia</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Requisitos_Taller">Requisitos Taller</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Taller">Taller</a></li>
+					<li><a asp-area="" asp-controller="Home" asp-action="Tipo_Documento">Tipo de Documento</a></li>
+				</ul>
+			</nav>
+
+			<section class="contenido">
+				<div class="contenedor">
+					<div class="titulo-pagina-activa">
+						<h3>Conferencia</h3>
+					</div>
+					<div class="direccion-pagina">
+						<ol class="dir_menu">
+							<li><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i>Inicio</a></li>
+							<li class="active">Conferencia</li>
+						</ol>
+					</div>
+					<div class="form_contenedor">
+						<div class="barra_menu">
+							<a href="" id="resp-form" class="resp-form"><i class="fa fa-minus"></i></a>
+						</div>
+						<form action="" class="formAula" name="formAula">
+							
+							<div class="barra_menu_desplegar" id="barra_menu_desplegar">
+								<h2>Conferencia</h2>
+								<div class="cont_form">
+									<div class="cont_row">
+										<label for="" class="lbl_form">Código Conferencia:</label>
+										<div class="codigo">
+											<label for="" class="prefijo">CON</label><input type="number" maxlength="3" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" onkeypress="return soloNumeros(event)" onblur="limpiaNumeros()" id="txtCodCarrera" class="txtCodCarrera" name="txtCodConferencia" placeholder="Código Conferencia" autofocus="">
+										</div>
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Conferencia:</label><input type="text" onkeypress="return soloLetras(event)" onblur="limpia()" id="letras" name="txtConferencia" placeholder="Conferencia">
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Hora de Inicio:</label><input type="time" name="txtHoraIni" placeholder="Hora de Inicio">
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Hora de Fin:</label><input type="time" name="txtHoraFin" placeholder="Hora de Fin">
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Fecha:</label><input type="date" value="2018-06-12" name="txtFecha" placeholder="Fecha">
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Código Pabellón:</label>
+										<select name="cboCampo" size=1 class="cboCampo"> 
+											<option>IDCONFE</option>
+											<option>CONFERENCIA</option>
+											<option>HORA_INI</option>
+											<option>HORA_FIN</option>
+											<option>FECHA</option>
+											<option>IDPAB</option>
+											<option>IDAULA</option>
+											<option>IDCARRERA</option>
+											<option>IDEVENTO</option>
+										</select>
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Código Aula:</label>
+										<select name="cboCampo" size=1 class="cboCampo"> 
+											<option>IDCONFE</option>
+											<option>CONFERENCIA</option>
+											<option>HORA_INI</option>
+											<option>HORA_FIN</option>
+											<option>FECHA</option>
+											<option>IDPAB</option>
+											<option>IDAULA</option>
+											<option>IDCARRERA</option>
+											<option>IDEVENTO</option>
+										</select>
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Código Carrera:</label>
+										<select name="cboCampo" size=1 class="cboCampo"> 
+											<option>IDCONFE</option>
+											<option>CONFERENCIA</option>
+											<option>HORA_INI</option>
+											<option>HORA_FIN</option>
+											<option>FECHA</option>
+											<option>IDPAB</option>
+											<option>IDAULA</option>
+											<option>IDCARRERA</option>
+											<option>IDEVENTO</option>
+										</select>
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Código Evento:</label>
+										<select name="cboCampo" size=1 class="cboCampo"> 
+											<option>IDCONFE</option>
+											<option>CONFERENCIA</option>
+											<option>HORA_INI</option>
+											<option>HORA_FIN</option>
+											<option>FECHA</option>
+											<option>IDPAB</option>
+											<option>IDAULA</option>
+											<option>IDCARRERA</option>
+											<option>IDEVENTO</option>
+										</select>
+									</div>
+									<div class="cont_btns_form">
+										<input type="submit" name="btnRegistrar" value="Registrar" id="btnRegistrar" class="btnRegistrar">
+										<input type="submit" name="btnModificar" value="Modificar" id="btnModificar" class="btnModificar">
+										<input type="submit" name="btnEliminar" value="Eliminar" id="btnEliminar" class="btnEliminar">
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">Buscar:</label><input type="text" name="txtCriterio" placeholder="Ingrese Criterio">
+									</div>
+									<div class="cont_row">
+										<label for="" class="lbl_form">En base a:</label>
+										<select name="cboCampo" size=1 class="cboCampo"> 
+											<option>IDCONFE</option>
+											<option>CONFERENCIA</option>
+											<option>HORA_INI</option>
+											<option>HORA_FIN</option>
+											<option>FECHA</option>
+											<option>IDPAB</option>
+											<option>IDAULA</option>
+											<option>IDCARRERA</option>
+											<option>IDEVENTO</option>
+										</select>
+									</div>
+									<div class="cont_btns_form">
+										<input type="submit" name="btnBuscar" value="Buscar" id="btnBuscar" class="btnBuscar">
+										<input type="submit" name="btnReiniciar" value="Reiniciar" id="btnReiniciar" class="btnReiniciar">
+										<input type="submit" name="btnOrdenarXID" value="Ordenar por Código" id="btnOrdenarXID" class="btnOrdenarXID">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+
+					<div class="cont_table">
+						<table>
+							<tr>
+								<th>Código Conferencia</th>
+								<th>Conferencia</th>
+								<th>Hora de Inicio</th>
+								<th>Hora de Fin</th>
+								<th>Fecha</th>
+								<th>Código Pabellón </th>
+								<th>Código Aula</th>
+								<th>Código Carrera</th>
+								<th>Código Evento</th>
+							</tr>
+							<tr>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+								<td><%=a.%></td>
+							</tr>
+						</table>
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+		<footer>
+			<div class="contenedor">
+				<div class="derechos-reservados">
+					<p><i class="fa fa-copyright" aria-hidden="true"></i>Todos los Derechos Reservados</p>
+				</div>
+				<div class="derechos">
+					<div class="escudo-usmp">
+						<img src="imgs/escudo_usmp.png" alt="">
+						<div class="info_derechos animated fadeInLeft">
+							<div class="flecha-down"></div>
+							<h5>Acosta Flores, Allison</h5>
+							<h5>Campos Ortiz, Carlos</h5>
+							<h5>Silva Cornejo, Marynadi</h5>
+							<h5>Velásquez Herrera, Marcelo</h5>
+						</div>
+					</div>
+					<div class="version">
+						<p>Versión 1.0</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</main>
+
+</body>
+</html>
