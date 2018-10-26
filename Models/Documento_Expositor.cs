@@ -6,7 +6,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
     {
         public int cod_tip_doc {get; set;}
         public int cod_expositor {get; set;}
-        public int numero {get; set;}
+        public int numero1 {get; set;}
 
     }
 }
