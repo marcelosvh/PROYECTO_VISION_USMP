@@ -8,22 +8,16 @@ using PROYECTO_APP_VISION_VISUAL_STUDIO.Models;
 
 namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 {
-    public class Expositor
-Controller : Controller
+    public class ExpositorController : Controller
     {
-        Expositor
-    DataAccessLayer objadmin = new Expositor
-    DataAccessLayer();
+        ExpositorDataAccessLayer objexpo = new ExpositorDataAccessLayer();
 
         public IActionResult Index()
         {
-            List<Expositor
-        > lstAdmin = new List<Expositor
-        >();
-            lstAdmin = objadmin.GetAllExpositor
-        es().ToList();
+            List<Expositor> lstExpo = new List<Expositor>();
+            lstExpo = objexpo.GetAllExpositores().ToList();
 
-            return View(lstAdmin);
+            return View(lstExpo);
         }
         [HttpGet]
         public IActionResult Create()
@@ -33,19 +27,14 @@ Controller : Controller
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind] Expositor
-     Expositor
-    )
+        public IActionResult Create([Bind] Expositor expositor)
         {
             if (ModelState.IsValid)
             {
-                objadmin.AddExpositor
-            (Expositor
-            );
+                objadmin.AddExpositor(expositor);
                 return RedirectToAction("Index");
             }
-            return View(Expositor
-        );
+            return View(expositor);
         }
 
         [HttpGet]
@@ -55,40 +44,29 @@ Controller : Controller
             {
                 return NotFound();
             }
-            Expositor
-         Expositor
-         = objadmin.GetExpositor
-        Data(id);
+            Expositor expositor = objadmin.GetExpositorData(id);
 
-            if (Expositor
-         == null)
+            if (expositor == null)
             {
                 return NotFound();
             }
-            return View(Expositor
-        );
+            return View(expositor);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind] Expositor
-     Expositor
-    )
+        public IActionResult Edit(int id, [Bind] Expositor expositor)
         {
-            if (id != Expositor
-        .ID)
+            if (id != expositor.ID)
             {
                 return NotFound();
             }
             if (ModelState.IsValid)
             {
-                objadmin.UpdateExpositor
-            (Expositor
-            );
+                objexpo.UpdateExpositor(expositor);
                 return RedirectToAction("Index");
             }
-            return View(Expositor
-        );
+            return View(expositor);
         }
 
         [HttpGet]
@@ -98,18 +76,13 @@ Controller : Controller
             {
                 return NotFound();
             }
-            Expositor
-         Expositor
-         = objadmin.GetExpositor
-        Data(id);
+            Expositor expositor = objexpo.GetExpositorData(id);
 
-            if (Expositor
-         == null)
+            if (expositor == null)
             {
                 return NotFound();
             }
-            return View(Expositor
-        );
+            return View(expositor);
         }
 
         [HttpGet]
@@ -119,26 +92,20 @@ Controller : Controller
             {
                 return NotFound();
             }
-            Expositor
-         Expositor
-         = objadmin.GetExpositor
-        Data(id);
+            Expositor expositor = objadmin.GetExpositorData(id);
 
-            if (Expositor
-         == null)
+            if (expositor == null)
             {
                 return NotFound();
             }
-            return View(Expositor
-        );
+            return View(expositor);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int? id)
         {
-            objadmin.DeleteExpositor
-        (id);
+            objadmin.DeleteExpositor(id);
             return RedirectToAction("Index");
         }
     }
