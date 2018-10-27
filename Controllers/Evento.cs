@@ -15,9 +15,9 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         public IActionResult Index()
         {
             List<Evento> lstAdmin = new List<Evento>();
-            lstAdmin = objadmin.GetAllEventoes().ToList();
+            lstEven = objeven.GetAllEventos().ToList();
 
-            return View(lstAdmin);
+            return View(lstEven);
         }
         [HttpGet]
         public IActionResult Create()
@@ -27,14 +27,14 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind] Evento Evento)
+        public IActionResult Create([Bind] Evento evento)
         {
             if (ModelState.IsValid)
             {
-                objadmin.AddEvento(Evento);
+                objadmin.AddEvento(evento);
                 return RedirectToAction("Index");
             }
-            return View(Evento);
+            return View(evento);
         }
 
         [HttpGet]
@@ -44,29 +44,29 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             {
                 return NotFound();
             }
-            Evento Evento = objadmin.GetEventoData(id);
+            Evento evento = objadmin.GetEventoData(id);
 
-            if (Evento == null)
+            if (evento == null)
             {
                 return NotFound();
             }
-            return View(Evento);
+            return View(evento);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind] Evento Evento)
+        public IActionResult Edit(int id, [Bind] Evento evento)
         {
-            if (id != Evento.ID)
+            if (id != evento.ID)
             {
                 return NotFound();
             }
             if (ModelState.IsValid)
             {
-                objadmin.UpdateEvento(Evento);
+                objadmin.UpdateEvento(evento);
                 return RedirectToAction("Index");
             }
-            return View(Evento);
+            return View(evento);
         }
 
         [HttpGet]
@@ -76,13 +76,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             {
                 return NotFound();
             }
-            Evento Evento = objadmin.GetEventoData(id);
+            Evento evento = objadmin.GetEventoData(id);
 
-            if (Evento == null)
+            if (evento == null)
             {
                 return NotFound();
             }
-            return View(Evento);
+            return View(evento);
         }
 
         [HttpGet]
@@ -92,13 +92,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             {
                 return NotFound();
             }
-            Evento Evento = objadmin.GetEventoData(id);
+            Evento evento = objadmin.GetEventorData(id);
 
-            if (Evento == null)
+            if (evento == null)
             {
                 return NotFound();
             }
-            return View(Evento);
+            return View(evento);
         }
 
         [HttpPost, ActionName("Delete")]
