@@ -10,7 +10,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 {
     public class ExpositorController : Controller
     {
-        ExpositorDataAccessLayer objexpo = new ExpositorDataAccessLayer();
+       VisionDataAccessLayer objexpo = new VisionDataAccessLayer();
 
         public IActionResult Index()
         {

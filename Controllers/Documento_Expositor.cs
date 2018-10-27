@@ -10,7 +10,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 {
     public class Documento_ExpositorController : Controller
     {
-        Documento_ExpositorDataAccessLayer objadmin = new Documento_ExpositorDataAccessLayer();
+        VisionDataAccessLayer objadmin = new VisionDataAccessLayer();
 
         public IActionResult Index()
         {

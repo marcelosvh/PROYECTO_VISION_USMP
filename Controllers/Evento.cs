@@ -10,7 +10,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 {
     public class EventoController : Controller
     {
-        EventoDataAccessLayer objadmin = new EventoDataAccessLayer();
+        VisionDataAccessLayer objadmin = new VisionDataAccessLayer();
 
         public IActionResult Index()
         {
