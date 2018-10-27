@@ -6,9 +6,9 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
 
  
 { 
-    public class pabellon
- 
-    { 
+    public class pabellon{
+
+    
         [Required] 
         public string IdPab { get; set; } 
         [Required] 
