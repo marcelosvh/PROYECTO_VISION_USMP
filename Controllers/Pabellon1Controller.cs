@@ -105,7 +105,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int? id)
         {
-            objemployee.DeleteEmployee(id);
+            objemployee.DeletePabellon1(id);
             return RedirectToAction("Index");
         }
     }
