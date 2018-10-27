@@ -7,6 +7,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO {
         public String horadeinicio{get;set;}
         public String horadefin{get;set;}
         public String fecha{get;set;}
-        
+
+        public String idpabellon{get;set;}
     }
 } 
