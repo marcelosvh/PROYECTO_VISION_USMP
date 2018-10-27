@@ -9,5 +9,6 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO {
         public String fecha{get;set;}
 
         public String idpabellon{get;set;}
+        public String idaula{get;set;}
     }
 } 
