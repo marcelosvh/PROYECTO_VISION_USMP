@@ -14,10 +14,10 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
         public IActionResult Index()
         {
-            List<Documento_Expositor> lstAdmin = new List<Documento_Expositor>();
-            lstAdmin = objadmin.GetAllDocumento_Expositores().ToList();
+            List<Documento_Expositor> lstDoc_exp = new List<Documento_Expositor>();
+            lstDoc_exp = objdoc_exp.GetAllDocumento_Expositor().ToList();
 
-            return View(lstAdmin);
+            return View(lstDoc_exp);
         }
         [HttpGet]
         public IActionResult Create()
@@ -27,14 +27,14 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind] Documento_Expositor Documento_Expositor)
+        public IActionResult Create([Bind] Documento_Expositor documento_expositor)
         {
             if (ModelState.IsValid)
             {
-                objadmin.AddDocumento_Expositor(Documento_Expositor);
+                objadmin.AddDocumento_Expositor(documento_expositor);
                 return RedirectToAction("Index");
             }
-            return View(Documento_Expositor);
+            return View(documento_expositor);
         }
 
         [HttpGet]
@@ -44,29 +44,29 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             {
                 return NotFound();
             }
-            Documento_Expositor Documento_Expositor = objadmin.GetDocumento_ExpositorData(id);
+            Documento_Expositor documento_expositor = objadmin.GetDocumento_ExpositorData(id);
 
-            if (Documento_Expositor == null)
+            if (documento_expositor == null)
             {
                 return NotFound();
             }
-            return View(Documento_Expositor);
+            return View(documento_expositor);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind] Documento_Expositor Documento_Expositor)
+        public IActionResult Edit(int id, [Bind] Documento_Expositor documento_expositor)
         {
-            if (id != Documento_Expositor.ID)
+            if (id != documento_expositor.ID)
             {
                 return NotFound();
             }
             if (ModelState.IsValid)
             {
-                objadmin.UpdateDocumento_Expositor(Documento_Expositor);
+                objadmin.UpdateDocumento_Expositor(documento_expositor);
                 return RedirectToAction("Index");
             }
-            return View(Documento_Expositor);
+            return View(documento_expositor);
         }
 
         [HttpGet]
@@ -76,13 +76,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             {
                 return NotFound();
             }
-            Documento_Expositor Documento_Expositor = objadmin.GetDocumento_ExpositorData(id);
+            Documento_Expositor documento_expositor = objadmin.GetDocumento_ExpositorrData(id);
 
-            if (Documento_Expositor == null)
+            if (documento_expositor == null)
             {
                 return NotFound();
             }
-            return View(Documento_Expositor);
+            return View(documento_expositor);
         }
 
         [HttpGet]
@@ -92,13 +92,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             {
                 return NotFound();
             }
-            Documento_Expositor Documento_Expositor = objadmin.GetDocumento_ExpositorData(id);
+            Documento_Expositor documento_expositor = objadmin.GetDocumento_ExpositorData(id);
 
-            if (Documento_Expositor == null)
+            if (documento_expositor == null)
             {
                 return NotFound();
             }
-            return View(Documento_Expositor);
+            return View(documento_expositor);
         }
 
         [HttpPost, ActionName("Delete")]
