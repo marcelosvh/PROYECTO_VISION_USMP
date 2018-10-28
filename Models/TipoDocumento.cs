@@ -11,3 +11,5 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
         public string Idtip { get; set; }
         [Required]
         public string Tip { get; set; }
+    }
+}
