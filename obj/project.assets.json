@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\LAB\\PROYECTO APP VISION VISUAL STUDIO\\PROYECTO APP VISION VISUAL STUDIO.csproj",
+      "projectUniqueName": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-1\\PROYECTO APP VISION VISUAL STUDIO.csproj",
       "projectName": "PROYECTO APP VISION VISUAL STUDIO",
-      "projectPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\LAB\\PROYECTO APP VISION VISUAL STUDIO\\PROYECTO APP VISION VISUAL STUDIO.csproj",
+      "projectPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-1\\PROYECTO APP VISION VISUAL STUDIO.csproj",
       "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\LAB\\PROYECTO APP VISION VISUAL STUDIO\\obj\\",
+      "outputPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
