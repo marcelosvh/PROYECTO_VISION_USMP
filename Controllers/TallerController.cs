@@ -34,14 +34,14 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
                 return NotFound();
             }
 
-            var contacto = await _context.Taller
+            var taller = await _context.Taller
                 .SingleOrDefaultAsync(m => m.idtaller == id);
-            if (contacto == null)
+            if (taller == null)
             {
                 return NotFound();
             }
 
-            return View(contacto);
+            return View(taller);
         }
 
         // GET: Taller/Create
