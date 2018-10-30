@@ -7,7 +7,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
 {
     public class RequisitosTaller
     {
-        [Required]
+        
         public string Idexp { get; set; }
         [Required]
         public string Apepat { get; set; }
