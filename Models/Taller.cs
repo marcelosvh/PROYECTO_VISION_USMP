@@ -7,21 +7,23 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
 {
     public class Taller
     {
-        [Required]
-        public string Idtaller { get; set; }
+        
+        public int Idtaller { get; set; }
         [Required]
         public string NomTaller { get; set; }
         [Required]
-        public string Horaini { get; set; }
+        public string Hora_ini { get; set; }
         [Required]
-        public string Horafin { get; set; }
+        public string Hora_fin { get; set; }
         [Required]
         public string Fecha { get; set; }
         [Required]
+        public string Idpab { get; set; }
+        [Required]
         public string Idaula { get; set; }
         [Required]
-        public string Idcar { get; set; }
+        public string Idcarrera { get; set; }
         [Required]
-        public string Ideve { get; set; }
+        public string idevento { get; set; }
     }
 }
