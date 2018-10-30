@@ -24,6 +24,6 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
         [Required]
         public string Idcarrera { get; set; }
         [Required]
-        public string idevento { get; set; }
+        public string Idevento { get; set; }
     }
 }
