@@ -58,7 +58,7 @@ using PROYECTO_APP_VISION_VISUAL_STUDIO.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(35, 1384, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "261790055c9a4c84bcde10b2b1fb9e73", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87ad4cc9a8674c10bebac0b67bfa8a4d", async() => {
                 BeginContext(41, 1371, true);
                 WriteLiteral(@"
 	<meta charset=""UTF-8"">
@@ -133,12 +133,12 @@ using PROYECTO_APP_VISION_VISUAL_STUDIO.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1421, 1857, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7231a6584add4e58b610c204c3f1fa86", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27180616f065408f9e97ce2529de5b99", async() => {
                 BeginContext(1427, 98, true);
                 WriteLiteral("\r\n\t<main class=\"crear-cuenta\">\r\n\t\t<div class=\"contenedor\">\r\n\t\t\t<div class=\"form_contenedor\">\r\n\t\t\t\t");
                 EndContext();
                 BeginContext(1525, 1713, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d1e07568e2ab407fad4d4005c517d3ef", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e74a2d0806c46e6ac5acaffa9921f80", async() => {
                     BeginContext(1558, 1673, true);
                     WriteLiteral(@"
 					<div class=""barra_menu_desplegar"" id=""barra_menu_desplegar"">
