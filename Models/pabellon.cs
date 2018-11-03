@@ -6,13 +6,12 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
 
  
 { 
-    public class Pabellon
- 
-    { 
+    public class Pabellon {
+
         [Required] 
-        public string IdPab { get; set; } 
+        public string IdPab { get; set;} 
         [Required] 
-        public string NomPab { get; set; } 
+        public string NomPab { get; set;} 
  
         }
 
