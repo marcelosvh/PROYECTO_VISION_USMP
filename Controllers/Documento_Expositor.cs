@@ -70,5 +70,22 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(expTipDoc);
         }
 
+        // GET: ExpTipDoc/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var expTipDoc = await _context.ExpTipDoc.SingleOrDefaultAsync(m => m.IDTip == id);
+            if (expTipDoc == null)
+            {
+                return NotFound();
+            }
+            ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", expTipDoc.IDExpositor);
+            ViewData["IDTip"] = new SelectList(_context.Set<TipoDocumento>(), "IDTip", "IDTip", expTipDoc.IDTip);
+            return View(expTipDoc);
+        }
 
 
