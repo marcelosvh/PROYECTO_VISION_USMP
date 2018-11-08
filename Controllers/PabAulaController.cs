@@ -45,3 +45,49 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(pabAula);
         }
+
+
+
+        // GET: PabAula/Create
+        public IActionResult Create()
+        {
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula");
+            ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon");
+            return View();
+        }
+
+        // POST: PabAula/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IDPabellon,IDAula,Piso,Capacidad")] PabAula pabAula)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(pabAula);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", pabAula.IDAula);
+            ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon", pabAula.IDPabellon);
+            return View(pabAula);
+        }
+
+        // GET: PabAula/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var pabAula = await _context.PabAula.SingleOrDefaultAsync(m => m.IDPabellon == id);
+            if (pabAula == null)
+            {
+                return NotFound();
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", pabAula.IDAula);
+            ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon", pabAula.IDPabellon);
+            return View(pabAula);
+        }
