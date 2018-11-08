@@ -124,4 +124,24 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             ViewData["IDTip"] = new SelectList(_context.Set<TipoDocumento>(), "IDTip", "IDTip", expTipDoc.IDTip);
             return View(expTipDoc);
         }
+        
+        // GET: ExpTipDoc/Delete/5
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var expTipDoc = await _context.ExpTipDoc
+                .Include(e => e.CodigoExpositor)
+                .Include(e => e.CodigoTipoDocumento)
+                .SingleOrDefaultAsync(m => m.IDTip == id);
+            if (expTipDoc == null)
+            {
+                return NotFound();
+            }
+
+            return View(expTipDoc);
+        }
 
