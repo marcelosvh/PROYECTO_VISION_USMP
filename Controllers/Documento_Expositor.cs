@@ -17,6 +17,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         {
             _context = context;
         }
+
         // GET: ExpTipDoc
         public async Task<IActionResult> Index()
         {
@@ -44,7 +45,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(expTipDoc);
         }
 
-         // GET: ExpTipDoc/Create
+        // GET: ExpTipDoc/Create
         public IActionResult Create()
         {
             ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor");
@@ -144,6 +145,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(expTipDoc);
         }
+
         // POST: ExpTipDoc/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
