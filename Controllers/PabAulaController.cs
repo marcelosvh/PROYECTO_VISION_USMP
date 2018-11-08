@@ -91,3 +91,41 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon", pabAula.IDPabellon);
             return View(pabAula);
         }
+
+
+        // POST: PabAula/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDPabellon,IDAula,Piso,Capacidad")] PabAula pabAula)
+        {
+            if (id != pabAula.IDPabellon)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(pabAula);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PabAulaExists(pabAula.IDPabellon))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", pabAula.IDAula);
+            ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon", pabAula.IDPabellon);
+            return View(pabAula);
+        }
