@@ -124,7 +124,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             ViewData["IDTip"] = new SelectList(_context.Set<TipoDocumento>(), "IDTip", "IDTip", expTipDoc.IDTip);
             return View(expTipDoc);
         }
-        
+
         // GET: ExpTipDoc/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
@@ -144,4 +144,20 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(expTipDoc);
         }
+        // POST: ExpTipDoc/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var expTipDoc = await _context.ExpTipDoc.SingleOrDefaultAsync(m => m.IDTip == id);
+            _context.ExpTipDoc.Remove(expTipDoc);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
+        private bool ExpTipDocExists(string id)
+        {
+            return _context.ExpTipDoc.Any(e => e.IDTip == id);
+        }
+    }
+}
