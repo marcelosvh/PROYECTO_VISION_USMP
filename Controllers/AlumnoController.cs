@@ -12,5 +12,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
     public class AlumnoController : Controller
     {   
 
+        private readonly MvcContext _context;
+
+        public AlumnoController(MvcContext context)
+        {
+            _context = context;
+        }
+
     }
+
 }
