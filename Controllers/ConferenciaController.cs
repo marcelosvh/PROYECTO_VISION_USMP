@@ -12,5 +12,12 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
     public class ConferenciaController : Controller
     {
 
+private readonly MvcContext _context;
+
+        public ConferenciaController(MvcContext context)
+        {
+            _context = context;
+        }
+        
     }
 }
