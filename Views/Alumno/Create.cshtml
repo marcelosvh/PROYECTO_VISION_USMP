@@ -9,5 +9,51 @@
 <h4>Alumno</h4>
 <hr />
 <div class="row">
-    
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DNI" class="control-label"></label>
+                <input asp-for="DNI" class="form-control" />
+                <span asp-validation-for="DNI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApePat" class="control-label"></label>
+                <input asp-for="ApePat" class="form-control" />
+                <span asp-validation-for="ApePat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApeMat" class="control-label"></label>
+                <input asp-for="ApeMat" class="form-control" />
+                <span asp-validation-for="ApeMat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomAlumno" class="control-label"></label>
+                <input asp-for="NomAlumno" class="form-control" />
+                <span asp-validation-for="NomAlumno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorreoAlum" class="control-label"></label>
+                <input asp-for="CorreoAlum" class="form-control" />
+                <span asp-validation-for="CorreoAlum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Celular" class="control-label"></label>
+                <input asp-for="Celular" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNac" class="control-label"></label>
+                <input asp-for="FechaNac" class="form-control" />
+                <span asp-validation-for="FechaNac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDCarrera" class="control-label"></label>
+                <select asp-for="IDCarrera" class ="form-control" asp-items="ViewBag.IDCarrera"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
 </div>
