@@ -17,6 +17,7 @@ namespace PROYECTO_VISION_USMP.Models
         public string ApePat {get; set;}
         [Required]
         [Display(Name="Apellido Materno")]
+        
         public string ApeMat {get; set;}
         [Required]
         [Display(Name="Nombre del Expositor")]
@@ -34,7 +35,6 @@ namespace PROYECTO_VISION_USMP.Models
         [MinLength(1), MaxLength(1), ]
         public int Orden {get; set;}
         public string IDEmpresa { get; set;}
-        
         public virtual Empresa CodigoEmpresa {get; set;}
         
         
