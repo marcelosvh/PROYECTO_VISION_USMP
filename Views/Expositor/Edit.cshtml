@@ -9,7 +9,22 @@
 <h4>Expositor</h4>
 <hr />
 <div class="row">
-    <dol-label"></label>
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IDExpositor" />
+            <div class="form-group">
+                <label asp-for="ApePat" class="control-label"></label>
+                <input asp-for="ApePat" class="form-control" />
+                <span asp-validation-for="ApePat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApeMat" class="control-label"></label>
+                <input asp-for="ApeMat" class="form-control" />
+                <span asp-validation-for="ApeMat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomExp" class="control-label"></label>
                 <input asp-for="NomExp" class="form-control" />
                 <span asp-validation-for="NomExp" class="text-danger"></span>
             </div>
