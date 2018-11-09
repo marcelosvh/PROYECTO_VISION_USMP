@@ -139,6 +139,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(expositor);
         }
+
         // POST: Expositor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -156,4 +157,3 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         }
     }
 }
-
