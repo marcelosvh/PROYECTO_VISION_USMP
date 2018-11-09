@@ -62,4 +62,19 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             }
             return View(evento);
         }
-        
+
+        // GET: Evento/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var evento = await _context.Evento.SingleOrDefaultAsync(m => m.IDEvento == id);
+            if (evento == null)
+            {
+                return NotFound();
+            }
+            return View(evento);
+        }
