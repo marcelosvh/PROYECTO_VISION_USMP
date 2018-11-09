@@ -17,13 +17,14 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         {
             _context = context;
         }
-         // GET: Evento
+
+        // GET: Evento
         public async Task<IActionResult> Index()
         {
             return View(await _context.Evento.ToListAsync());
         }
 
-         // GET: Evento/Details/5
+        // GET: Evento/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -41,7 +42,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(evento);
         }
 
-         // GET: Evento/Create
+        // GET: Evento/Create
         public IActionResult Create()
         {
             return View();
