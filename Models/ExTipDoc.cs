@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace PROYECTO_VISION_USMP.Models
 
 {
-    public class ExpTipDoc
+        public class ExpTipDoc
     {
         
         [Display(Name="Codigo de Tipo de Documento")]
