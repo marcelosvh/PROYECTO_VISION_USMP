@@ -57,6 +57,26 @@ private readonly MvcContext _context;
             ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon");
             return View();
         }
+        
+        // POST: Conferencia/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IDConferencia,NomConferencia,HoraIni,HoraFin,Fecha,IDPabellon,IDAula,IDCarrera,IDEvento")] Conferencia conferencia)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(conferencia);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", conferencia.IDAula);
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera", conferencia.IDCarrera);
+            ViewData["IDEvento"] = new SelectList(_context.Set<Evento>(), "IDEvento", "IDEvento", conferencia.IDEvento);
+            ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon", conferencia.IDPabellon);
+            return View(conferencia);
+        }
 
 
     }
