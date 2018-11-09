@@ -25,6 +25,28 @@ private readonly MvcContext _context;
             var mvcContext = _context.Conferencia.Include(c => c.CodigoAula).Include(c => c.CodigoCarrera).Include(c => c.CodigoEvento).Include(c => c.CodigoPabellon);
             return View(await mvcContext.ToListAsync());
         }
-        
+
+        // GET: Conferencia/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var conferencia = await _context.Conferencia
+                .Include(c => c.CodigoAula)
+                .Include(c => c.CodigoCarrera)
+                .Include(c => c.CodigoEvento)
+                .Include(c => c.CodigoPabellon)
+                .SingleOrDefaultAsync(m => m.IDConferencia == id);
+            if (conferencia == null)
+            {
+                return NotFound();
+            }
+
+            return View(conferencia);
+        }
+
     }
 }
