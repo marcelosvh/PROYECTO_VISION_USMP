@@ -64,7 +64,23 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             }
             return View(carrera);
         }
+        
+        
+        // GET: Carrera/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var carrera = await _context.Carrera.SingleOrDefaultAsync(m => m.IDCarrera == id);
+            if (carrera == null)
+            {
+                return NotFound();
+            }
+            return View(carrera);
+        }
 
     }
 
