@@ -9,7 +9,7 @@ namespace PROYECTO_VISION_USMP.Models
         [Key]
         [Required]
         [Display(Name="Codigo de Evento")]
-        
+
         public string IDEvento {get; set;}
         [Required]
         [Display(Name="Tema de Evento")]
@@ -23,7 +23,6 @@ namespace PROYECTO_VISION_USMP.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode=true)]
         [DataType(DataType.Date)]
         [Required]
-
         public string Fecha_Fin {get; set;}
         public ICollection<Conferencia> Conferencias {get; set;}
         public ICollection<Taller> Tallers {get; set;}
