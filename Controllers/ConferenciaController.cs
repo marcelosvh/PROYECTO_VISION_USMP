@@ -48,5 +48,16 @@ private readonly MvcContext _context;
             return View(conferencia);
         }
 
+        // GET: Conferencia/Create
+        public IActionResult Create()
+        {
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula");
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera");
+            ViewData["IDEvento"] = new SelectList(_context.Set<Evento>(), "IDEvento", "IDEvento");
+            ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon");
+            return View();
+        }
+
+
     }
 }
