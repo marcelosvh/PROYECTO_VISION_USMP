@@ -11,6 +11,15 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 {
     public class CarreraController : Controller
     {
+        
+        private readonly MvcContext _context;
+
+        public CarreraController(MvcContext context)
+        {
+            _context = context;
+        }
+
+        
 
     }
 
