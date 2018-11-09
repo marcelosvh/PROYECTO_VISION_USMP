@@ -37,8 +37,7 @@ namespace PROYECTO_VISION_USMP.Models
         public int Orden {get; set;}
         public string IDEmpresa { get; set;}
         public virtual Empresa CodigoEmpresa {get; set;}
-        
-                
+            
 
     }
 }

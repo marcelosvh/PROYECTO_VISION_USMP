@@ -20,7 +20,5 @@ namespace PROYECTO_VISION_USMP.Models
         public virtual TipoDocumento CodigoTipoDocumento {get; set;}
         public virtual Expositor CodigoExpositor {get; set;}
 
-
-
     }
 }
