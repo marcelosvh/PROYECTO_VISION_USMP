@@ -139,4 +139,21 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(expositor);
         }
+        // POST: Expositor/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var expositor = await _context.Expositor.SingleOrDefaultAsync(m => m.IDExpositor == id);
+            _context.Expositor.Remove(expositor);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool ExpositorExists(string id)
+        {
+            return _context.Expositor.Any(e => e.IDExpositor == id);
+        }
+    }
+}
 
