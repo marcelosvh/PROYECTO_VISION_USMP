@@ -19,7 +19,11 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             _context = context;
         }
 
-        
+        // GET: Carrera
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Carrera.ToListAsync());
+        }
 
     }
 
