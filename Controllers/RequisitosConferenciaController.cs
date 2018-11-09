@@ -125,3 +125,42 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers9
             ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", requisitosConferencia.IDExpositor);
             return View(requisitosConferencia);
         }
+
+
+          // GET: RequisitosConferencia/Delete/5
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var requisitosConferencia = await _context.RequisitosConferencia
+                .Include(r => r.CodigoConferencia)
+                .Include(r => r.CodigoExpositor)
+                .SingleOrDefaultAsync(m => m.IDExpositor == id);
+            if (requisitosConferencia == null)
+            {
+                return NotFound();
+            }
+
+            return View(requisitosConferencia);
+        }
+
+        // POST: RequisitosConferencia/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var requisitosConferencia = await _context.RequisitosConferencia.SingleOrDefaultAsync(m => m.IDExpositor == id);
+            _context.RequisitosConferencia.Remove(requisitosConferencia);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool RequisitosConferenciaExists(string id)
+        {
+            return _context.RequisitosConferencia.Any(e => e.IDExpositor == id);
+        }
+    }
+}
