@@ -19,6 +19,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             _context = context;
         }
 
+        // GET: Alumno
+        public async Task<IActionResult> Index()
+        {
+            var mvcContext = _context.Alumno.Include(a => a.CodigoCarrera);
+            return View(await mvcContext.ToListAsync());
+        }
+
     }
 
 }
