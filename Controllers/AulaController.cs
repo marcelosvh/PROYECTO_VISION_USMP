@@ -19,6 +19,11 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             _context = context;
         }
 
+        // GET: Aula
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Aula.ToListAsync());
+        }
 
     }
 
