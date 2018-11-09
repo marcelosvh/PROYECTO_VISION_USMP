@@ -10,6 +10,23 @@
 <hr />
 <div class="row">
 
-    
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IDAula" class="control-label"></label>
+                <input asp-for="IDAula" class="form-control" />
+                <span asp-validation-for="IDAula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescAula" class="control-label"></label>
+                <input asp-for="DescAula" class="form-control" />
+                <span asp-validation-for="DescAula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
 
 </div>
