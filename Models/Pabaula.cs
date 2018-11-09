@@ -17,4 +17,16 @@ namespace PROYECTO_VISION_USMP.Models
         [MaxLength(1)]
         public int Piso {get; set;}
 
+         [Required]
+        public int Capacidad {get; set;}
+        public virtual Pabellon CodigoPabellon {get; set;}
+        public virtual Aula CodigoAula {get;set;}
+       
+    
+       
+    }
+
+
+}
+
 
