@@ -45,5 +45,25 @@
             <div class="form-group">
                 <label asp-for="CorreoExp" class="control-label"></label>
                 <input asp-for="CorreoExp" class="form-control" />
-  
+                <span asp-validation-for="CorreoExp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orden" class="control-label"></label>
+                <input asp-for="Orden" class="form-control" />
+                <span asp-validation-for="Orden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDEmpresa" class="control-label"></label>
+                <select asp-for="IDEmpresa" class ="form-control" asp-items="ViewBag.IDEmpresa"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
