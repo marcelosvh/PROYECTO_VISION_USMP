@@ -124,6 +124,22 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(alumno);
         }
 
+        // POST: Alumno/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var alumno = await _context.Alumno.SingleOrDefaultAsync(m => m.DNI == id);
+            _context.Alumno.Remove(alumno);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool AlumnoExists(string id)
+        {
+            return _context.Alumno.Any(e => e.DNI == id);
+        }
+
     }
 
 }
