@@ -12,7 +12,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
     public class AulaController : Controller
     {
 
-        
+        private readonly MvcContext _context;
 
     }
 
