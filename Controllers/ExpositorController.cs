@@ -154,6 +154,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         private bool ExpositorExists(string id)
         {
             return _context.Expositor.Any(e => e.IDExpositor == id);
+            
         }
     }
 }

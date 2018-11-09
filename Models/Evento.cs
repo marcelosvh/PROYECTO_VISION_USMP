@@ -26,5 +26,7 @@ namespace PROYECTO_VISION_USMP.Models
         public string Fecha_Fin {get; set;}
         public ICollection<Conferencia> Conferencias {get; set;}
         public ICollection<Taller> Tallers {get; set;}
+
+        
     }
 }
