@@ -138,6 +138,21 @@ private readonly MvcContext _context;
 
             return View(conferencia);
         }
-        
+
+         // POST: Conferencia/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var conferencia = await _context.Conferencia.SingleOrDefaultAsync(m => m.IDConferencia == id);
+            _context.Conferencia.Remove(conferencia);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool ConferenciaExists(string id)
+        {
+            return _context.Conferencia.Any(e => e.IDConferencia == id);
+        }
     }
 }
