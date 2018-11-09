@@ -68,3 +68,56 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(expositor);
         }
 
+        // GET: Expositor/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var expositor = await _context.Expositor.SingleOrDefaultAsync(m => m.IDExpositor == id);
+            if (expositor == null)
+            {
+                return NotFound();
+            }
+            ViewData["IDEmpresa"] = new SelectList(_context.Empresa, "IDEmpresa", "IDEmpresa", expositor.IDEmpresa);
+            return View(expositor);
+        }
+
+        // POST: Expositor/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDExpositor,ApePat,ApeMat,NomExp,Nacionalidad,TipoOrador,CorreoExp,Orden,IDEmpresa")] Expositor expositor)
+        {
+            if (id != expositor.IDExpositor)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(expositor);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ExpositorExists(expositor.IDExpositor))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDEmpresa"] = new SelectList(_context.Empresa, "IDEmpresa", "IDEmpresa", expositor.IDEmpresa);
+            return View(expositor);
+        }
+
