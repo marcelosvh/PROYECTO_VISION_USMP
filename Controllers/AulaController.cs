@@ -88,7 +88,10 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("IDAula,DescAula")] Aula aula)
         {
-            
+            if (id != aula.IDAula)
+            {
+                return NotFound();
+            }
         }
 
     }
