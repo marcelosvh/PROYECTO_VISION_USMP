@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PROYECTO_APP_VISION_VISUAL_STUDIO.Models;
 
+
 namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 {
     public class HomeController : Controller
