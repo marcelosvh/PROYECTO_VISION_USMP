@@ -131,3 +131,21 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(evento);
         }
+
+        // POST: Evento/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var evento = await _context.Evento.SingleOrDefaultAsync(m => m.IDEvento == id);
+            _context.Evento.Remove(evento);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool EventoExists(string id)
+        {
+            return _context.Evento.Any(e => e.IDEvento == id);
+        }
+    }
+}
