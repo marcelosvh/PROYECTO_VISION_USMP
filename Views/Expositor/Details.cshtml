@@ -1,0 +1,72 @@
+@model PROYECTO_VISION_USMP.Models.Expositor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expositor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDExpositor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDExpositor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApePat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApePat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApeMat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApeMat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomExp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomExp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoOrador)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoOrador)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoExp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CorreoExp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Orden)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Orden)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoEmpresa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodigoEmpresa.IDEmpresa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IDExpositor">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
