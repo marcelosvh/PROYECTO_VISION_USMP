@@ -43,6 +43,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(carrera);
         }
 
+         // GET: Carrera/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
     }
 
 }
