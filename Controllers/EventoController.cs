@@ -17,3 +17,8 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         {
             _context = context;
         }
+         // GET: Evento
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Evento.ToListAsync());
+        }
