@@ -81,5 +81,40 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(empresa);
         }
 
+// POST: Empresa/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDEmpresa,NomEmpresa,CorreoEmpresa,Pais,Telefono")] Empresa empresa)
+        {
+            if (id != empresa.IDEmpresa)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(empresa);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!EmpresaExists(empresa.IDEmpresa))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(empresa);
+        }
+        
     }
 }
