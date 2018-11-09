@@ -77,7 +77,45 @@ private readonly MvcContext _context;
             ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon", conferencia.IDPabellon);
             return View(conferencia);
         }
+ 
+ // POST: Conferencia/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDConferencia,NomConferencia,HoraIni,HoraFin,Fecha,IDPabellon,IDAula,IDCarrera,IDEvento")] Conferencia conferencia)
+        {
+            if (id != conferencia.IDConferencia)
+            {
+                return NotFound();
+            }
 
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(conferencia);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ConferenciaExists(conferencia.IDConferencia))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", conferencia.IDAula);
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera", conferencia.IDCarrera);
+            ViewData["IDEvento"] = new SelectList(_context.Set<Evento>(), "IDEvento", "IDEvento", conferencia.IDEvento);
+            ViewData["IDPabellon"] = new SelectList(_context.Set<Pabellon>(), "IDPabellon", "IDPabellon", conferencia.IDPabellon);
+            return View(conferencia);
+        }
 
     }
 }
