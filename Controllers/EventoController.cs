@@ -42,8 +42,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(evento);
         }
 
-        
-        //Evento/Create
+         // GET: Evento/Create
         public IActionResult Create()
         {
             return View();
