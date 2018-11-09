@@ -133,5 +133,22 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(empresa);
         }
+
+         // POST: Empresa/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var empresa = await _context.Empresa.SingleOrDefaultAsync(m => m.IDEmpresa == id);
+            _context.Empresa.Remove(empresa);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool EmpresaExists(string id)
+        {
+            return _context.Empresa.Any(e => e.IDEmpresa == id);
+        }
+        
     }
 }
