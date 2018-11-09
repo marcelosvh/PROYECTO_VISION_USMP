@@ -42,6 +42,44 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(empresa);
         }   
-        
+
+        // GET: Empresa/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Empresa/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IDEmpresa,NomEmpresa,CorreoEmpresa,Pais,Telefono")] Empresa empresa)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(empresa);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(empresa);
+        }
+
+ // GET: Empresa/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var empresa = await _context.Empresa.SingleOrDefaultAsync(m => m.IDEmpresa == id);
+            if (empresa == null)
+            {
+                return NotFound();
+            }
+            return View(empresa);
+        }
+
     }
 }
