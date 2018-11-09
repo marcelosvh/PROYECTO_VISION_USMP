@@ -117,5 +117,27 @@ private readonly MvcContext _context;
             return View(conferencia);
         }
 
+ // GET: Conferencia/Delete/5
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var conferencia = await _context.Conferencia
+                .Include(c => c.CodigoAula)
+                .Include(c => c.CodigoCarrera)
+                .Include(c => c.CodigoEvento)
+                .Include(c => c.CodigoPabellon)
+                .SingleOrDefaultAsync(m => m.IDConferencia == id);
+            if (conferencia == null)
+            {
+                return NotFound();
+            }
+
+            return View(conferencia);
+        }
+        
     }
 }
