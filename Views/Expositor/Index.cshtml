@@ -30,6 +30,31 @@
                 <th>
                     @Html.DisplayNameFor(model => model.TipoOrador)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CorreoExp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orden)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoEmpresa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDExpositor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApePat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApeMat)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.NomExp)
             </td>
             <td>
