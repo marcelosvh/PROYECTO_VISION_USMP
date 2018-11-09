@@ -17,3 +17,10 @@ namespace PROYECTO_VISION_USMP.Models
         [Display(Name="Nombre de Pabellón")]
         [Required] 
         public string NomPab { get; set; } 
+
+           public ICollection<Taller> Talleres {get; set;}
+        public ICollection<Conferencia> Conferencias {get; set;}
+        
+ 
+    }
+}
