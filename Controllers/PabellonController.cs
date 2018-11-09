@@ -41,3 +41,25 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(pabellon);
         }
+
+         // GET: Pabellon/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Pabellon/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IDPabellon,NomPab")] Pabellon pabellon)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(pabellon);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(pabellon);
+        }
