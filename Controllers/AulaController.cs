@@ -56,7 +56,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDAula,DescAula")] Aula aula)
         {
-            
+            if (ModelState.IsValid)
+            {
+                _context.Add(aula);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(aula);
         }
 
     }
