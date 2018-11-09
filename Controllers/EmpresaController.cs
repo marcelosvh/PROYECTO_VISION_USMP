@@ -18,7 +18,30 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         {
             _context = context;
         }
+
+        // GET: Empresa
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Empresa.ToListAsync());
+        }
+
+        // GET: Empresa/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var empresa = await _context.Empresa
+                .SingleOrDefaultAsync(m => m.IDEmpresa == id);
+            if (empresa == null)
+            {
+                return NotFound();
+            }
+
+            return View(empresa);
+        }   
         
-          
     }
 }
