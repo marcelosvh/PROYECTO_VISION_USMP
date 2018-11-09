@@ -69,6 +69,42 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(alumno);
         }
 
+        // POST: Alumno/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("DNI,ApePat,ApeMat,NomAlumno,CorreoAlum,Celular,FechaNac,IDCarrera")] Alumno alumno)
+        {
+            if (id != alumno.DNI)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(alumno);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!AlumnoExists(alumno.DNI))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera", alumno.IDCarrera);
+            return View(alumno);
+        }
+
     }
 
 }
