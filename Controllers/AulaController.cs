@@ -25,6 +25,24 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(await _context.Aula.ToListAsync());
         }
 
+        // GET: Aula/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var aula = await _context.Aula
+                .SingleOrDefaultAsync(m => m.IDAula == id);
+            if (aula == null)
+            {
+                return NotFound();
+            }
+
+            return View(aula);
+        }
+
     }
 
 }
