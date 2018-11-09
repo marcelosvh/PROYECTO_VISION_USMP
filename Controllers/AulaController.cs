@@ -134,6 +134,17 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(aula);
         }
 
+        // POST: Aula/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var aula = await _context.Aula.SingleOrDefaultAsync(m => m.IDAula == id);
+            _context.Aula.Remove(aula);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 
 }
