@@ -45,6 +45,13 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(alumno);
         }
 
+        // GET: Alumno/Create
+        public IActionResult Create()
+        {
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera");
+            return View();
+        }
+
     }
 
 }
