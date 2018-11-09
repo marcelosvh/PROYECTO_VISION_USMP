@@ -70,3 +70,58 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers9
             ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", requisitosConferencia.IDExpositor);
             return View(requisitosConferencia);
         }
+
+ // GET: RequisitosConferencia/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var requisitosConferencia = await _context.RequisitosConferencia.SingleOrDefaultAsync(m => m.IDExpositor == id);
+            if (requisitosConferencia == null)
+            {
+                return NotFound();
+            }
+            ViewData["IDConferencia"] = new SelectList(_context.Conferencia, "IDConferencia", "IDConferencia", requisitosConferencia.IDConferencia);
+            ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", requisitosConferencia.IDExpositor);
+            return View(requisitosConferencia);
+        }
+
+        // POST: RequisitosConferencia/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDExpositor,IDConferencia,DescReqConf")] RequisitosConferencia requisitosConferencia)
+        {
+            if (id != requisitosConferencia.IDExpositor)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(requisitosConferencia);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!RequisitosConferenciaExists(requisitosConferencia.IDExpositor))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDConferencia"] = new SelectList(_context.Conferencia, "IDConferencia", "IDConferencia", requisitosConferencia.IDConferencia);
+            ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", requisitosConferencia.IDExpositor);
+            return View(requisitosConferencia);
+        }
