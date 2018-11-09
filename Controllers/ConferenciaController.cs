@@ -18,6 +18,13 @@ private readonly MvcContext _context;
         {
             _context = context;
         }
+
+        // GET: Conferencia
+        public async Task<IActionResult> Index()
+        {
+            var mvcContext = _context.Conferencia.Include(c => c.CodigoAula).Include(c => c.CodigoCarrera).Include(c => c.CodigoEvento).Include(c => c.CodigoPabellon);
+            return View(await mvcContext.ToListAsync());
+        }
         
     }
 }
