@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace PROYECTO_VISION_USMP.Models
+
 {
     public class ExpTipDoc
     {
@@ -11,7 +12,7 @@ namespace PROYECTO_VISION_USMP.Models
         public string IDTip {get; set;}
         
         [Display(Name="Codigo de Expositor")]
-        
+
         public string IDExpositor {get; set;}
         [Required]
         [MaxLength(12)]
