@@ -8,3 +8,12 @@ namespace PROYECTO_VISION_USMP.Models
     public class Pabellon
  
     { 
+
+        [Key]
+        [Required] 
+        [Display(Name="Codigo de Pabellón")]
+        public string IDPabellon { get; set; }
+        [ForeignKey("IDPabellon")] 
+        [Display(Name="Nombre de Pabellón")]
+        [Required] 
+        public string NomPab { get; set; } 
