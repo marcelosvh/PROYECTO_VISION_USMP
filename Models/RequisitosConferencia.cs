@@ -16,3 +16,13 @@ namespace PROYECTO_VISION_USMP.Models
         
         public string IDConferencia { get; set; }
         [Required]
+        [Display(Name="Descripción de Requisitos Conferencia")]
+        public string DescReqConf { get; set; }
+        public virtual Expositor CodigoExpositor {get; set;}
+        public virtual Conferencia CodigoConferencia {get; set;} 
+
+
+        }
+
+
+}
