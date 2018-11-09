@@ -24,3 +24,24 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             var mvcContext = _context.Expositor.Include(e => e.CodigoEmpresa);
             return View(await mvcContext.ToListAsync());
         }
+
+        // GET: Expositor/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var expositor = await _context.Expositor
+                .Include(e => e.CodigoEmpresa)
+                .SingleOrDefaultAsync(m => m.IDExpositor == id);
+            if (expositor == null)
+            {
+                return NotFound();
+            }
+
+            return View(expositor);
+        }
+
+        
