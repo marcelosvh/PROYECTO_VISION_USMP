@@ -82,6 +82,41 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(carrera);
         }
 
+        // POST: Carrera/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDCarrera,NomCarrera")] Carrera carrera)
+        {
+            if (id != carrera.IDCarrera)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(carrera);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CarreraExists(carrera.IDCarrera))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(carrera);
+        }
+
     }
 
 }
