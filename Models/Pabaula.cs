@@ -5,10 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace PROYECTO_VISION_USMP.Models 
 { 
 
- 
-{ 
-    public class Pabaula{
+  public class PabAula
+    {
+        
+        [Display(Name="Codigo de Pabellón")]
+        public string IDPabellon { get; set;}
 
+
+        
     
         [Required] 
         public string IdPab { get; set; } 
