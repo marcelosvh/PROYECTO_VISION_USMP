@@ -25,6 +25,24 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(await _context.Carrera.ToListAsync());
         }
 
+        // GET: Carrera/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var carrera = await _context.Carrera
+                .SingleOrDefaultAsync(m => m.IDCarrera == id);
+            if (carrera == null)
+            {
+                return NotFound();
+            }
+
+            return View(carrera);
+        }
+
     }
 
 }
