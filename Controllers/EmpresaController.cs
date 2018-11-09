@@ -11,6 +11,14 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 {
     public class EmpresaController : Controller
     {
+
+       private readonly MvcContext _context;
+
+        public EmpresaController(MvcContext context)
+        {
+            _context = context;
+        }
         
+          
     }
 }
