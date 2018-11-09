@@ -44,3 +44,29 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers9
 
             return View(requisitosConferencia);
         }
+
+          // GET: RequisitosConferencia/Create
+        public IActionResult Create()
+        {
+            ViewData["IDConferencia"] = new SelectList(_context.Conferencia, "IDConferencia", "IDConferencia");
+            ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor");
+            return View();
+        }
+
+        // POST: RequisitosConferencia/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IDExpositor,IDConferencia,DescReqConf")] RequisitosConferencia requisitosConferencia)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(requisitosConferencia);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDConferencia"] = new SelectList(_context.Conferencia, "IDConferencia", "IDConferencia", requisitosConferencia.IDConferencia);
+            ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", requisitosConferencia.IDExpositor);
+            return View(requisitosConferencia);
+        }
