@@ -44,4 +44,10 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(expositor);
         }
 
-        
+        // GET: Expositor/Create
+        public IActionResult Create()
+        {
+            ViewData["IDEmpresa"] = new SelectList(_context.Empresa, "IDEmpresa", "IDEmpresa");
+            return View();
+        }
+
