@@ -42,7 +42,8 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(evento);
         }
 
-        // GET: Evento/Create
+        
+        //Evento/Create
         public IActionResult Create()
         {
             return View();
@@ -79,6 +80,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             }
             return View(evento);
         }
+
 
         // POST: Evento/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

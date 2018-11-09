@@ -11,6 +11,7 @@ namespace PROYECTO_VISION_USMP.Models
         public string IDTip {get; set;}
         
         [Display(Name="Codigo de Expositor")]
+        
         public string IDExpositor {get; set;}
         [Required]
         [MaxLength(12)]
