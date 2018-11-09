@@ -134,6 +134,22 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
 
             return View(carrera);
         }
+        
+         // POST: Carrera/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var carrera = await _context.Carrera.SingleOrDefaultAsync(m => m.IDCarrera == id);
+            _context.Carrera.Remove(carrera);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool CarreraExists(string id)
+        {
+            return _context.Carrera.Any(e => e.IDCarrera == id);
+        }
 
 
     }
