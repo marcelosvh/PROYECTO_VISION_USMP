@@ -43,6 +43,12 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(aula);
         }
 
+        // GET: Aula/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
     }
 
 }
