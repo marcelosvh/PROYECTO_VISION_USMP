@@ -52,6 +52,23 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View();
         }
 
+        // GET: Alumno/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var alumno = await _context.Alumno.SingleOrDefaultAsync(m => m.DNI == id);
+            if (alumno == null)
+            {
+                return NotFound();
+            }
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera", alumno.IDCarrera);
+            return View(alumno);
+        }
+
     }
 
 }
