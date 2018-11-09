@@ -17,31 +17,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CodigoExpositor)
-            </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Número)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoTipoDocumento.IDTip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoExpositor.IDExpositor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Número)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+            </th
 }
     </tbody>
 </table>
