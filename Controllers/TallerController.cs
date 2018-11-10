@@ -77,6 +77,65 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(taller);
         }
 
+        // GET: Taller/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var taller = await _context.Taller.SingleOrDefaultAsync(m => m.IDTaller == id);
+            if (taller == null)
+            {
+                return NotFound();
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", taller.IDAula);
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera", taller.IDCarrera);
+            ViewData["IDEvento"] = new SelectList(_context.Evento, "IDEvento", "IDEvento", taller.IDEvento);
+            ViewData["IDPabellon"] = new SelectList(_context.Pabellon, "IDPabellon", "IDPabellon", taller.IDPabellon);
+            return View(taller);
+        }
+
+        // POST: Taller/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDTaller,NomTaller,HoraIni,HoraFin,Fecha,IDPabellon,IDAula,IDCarrera,IDEvento")] Taller taller)
+        {
+            if (id != taller.IDTaller)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(taller);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TallerExists(taller.IDTaller))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", taller.IDAula);
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera", taller.IDCarrera);
+            ViewData["IDEvento"] = new SelectList(_context.Evento, "IDEvento", "IDEvento", taller.IDEvento);
+            ViewData["IDPabellon"] = new SelectList(_context.Pabellon, "IDPabellon", "IDPabellon", taller.IDPabellon);
+            return View(taller);
+        }
+
         
         
     }
