@@ -115,6 +115,24 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(tipoDocumento);
         }
 
+        // GET: TipoDocumento/Delete/5
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tipoDocumento = await _context.TipoDocumento
+                .SingleOrDefaultAsync(m => m.IDTip == id);
+            if (tipoDocumento == null)
+            {
+                return NotFound();
+            }
+
+            return View(tipoDocumento);
+        }
+
         
     }
 }
