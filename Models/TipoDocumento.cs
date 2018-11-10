@@ -1,15 +1,20 @@
-using System;  
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
-
-
-namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
+using System.ComponentModel.DataAnnotations.Schema;
+namespace PROYECTO_VISION_USMP.Models
 {
     public class TipoDocumento
     {
-        
-        public string Idtip { get; set; }
+        [Key]
         [Required]
-        public string Tip { get; set; }
+        [Display(Name="Codigo de Tipo de Documento")]
+        public string IDTip { get; set; }
+        [ForeignKey("IDTip")] 
+        [Required]
+        [Display(Name="Descripción de Tipo de Documento")]
+        public string DescTip { get; set; }
+             
+        
     }
 }
