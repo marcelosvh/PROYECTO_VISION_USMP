@@ -3,22 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PROYECTO_APP_VISION_VISUAL_STUDIO</title>
+    <title>@ViewData["Title"] - Vision</title>
 
     <environment include="Development">
-        <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" /> -->
-        <link rel="stylesheet" href="~/css/estilos.css">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <!-- <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" /> -->
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
-    <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,41 +26,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">PROYECTO_APP_VISION_VISUAL_STUDIO</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Vision</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Alumno">Alumno</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Administrador">Administrador</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Aula">Aula</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Carrera">Carrera</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Conferencia">Conferencia</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Crear_cuenta">Crear_cuenta</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Documento_expositor">Documento_expositor</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Evento">Evento</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Expositor">Expositor</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Pabellon">Pabellon</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Requisitos_Conferencia">Requisitos_Conferencia</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Requisitos_Taller">Requisitos_Taller</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Taller">Taller</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Tipo_Documento">Tipo_Documento</a></li>
+                    <li><a asp-area="" asp-controller="Alumno" asp-action="Index">Alumno</a></li>
+                    <li><a asp-area="" asp-controller="Aula" asp-action="Index">Aula</a></li>
+                    <li><a asp-area="" asp-controller="Carrera" asp-action="Index">Carrera</a></li>
+                    <li><a asp-area="" asp-controller="Conferencia" asp-action="Index">Conferencia</a></li>
+                    <li><a asp-area="" asp-controller="Empresa" asp-action="Index">Empresa</a></li>
+                    <li><a asp-area="" asp-controller="Evento" asp-action="Index">Evento</a></li>
+                    <li><a asp-area="" asp-controller="Expositor" asp-action="Index">Expositor</a></li>
+                    <li><a asp-area="" asp-controller="ExpTipDoc" asp-action="Index">ExpTipDoc</a></li>
+                    <li><a asp-area="" asp-controller="PabAula" asp-action="Index">PabAula</a></li>
+                    <li><a asp-area="" asp-controller="Pabellon" asp-action="Index">Pabellon</a></li>
+                    
+
                 </ul>
             </div>
         </div>
-    </nav> -->
-
-    <partial name="_CookieConsentPartial" />
-
+    </nav>
     <div class="container body-content">
         @RenderBody()
-            <!-- <hr />
-            <footer>
-                <p>&copy; 2018 - PROYECTO_APP_VISION_VISUAL_STUDIO</p>
-            </footer> -->
+        <hr />
+        <footer>
+            <p>&copy; 2018 - Vision</p>
+        </footer>
     </div>
 
     <environment include="Development">
@@ -70,11 +63,11 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
         </script>
         <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
@@ -82,7 +75,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
-        <!-- <script src="~/js/site.min.js" asp-append-version="true"></script> -->
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("Scripts", required: false)

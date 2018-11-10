@@ -1,26 +1,24 @@
 using System;  
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-
-
-namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models
+namespace PROYECTO_VISION_USMP.Models
 {
     public class RequisitosTaller
     {
+        
+        [Display(Name="Codigo de Expositor")]
+        public string IDExpositor { get; set; }
+        
+        
+        [Display(Name="Codigo de Taller")]
+        public string IDTaller { get; set; }
+        
         [Required]
-        public string Idexp { get; set; }
-        [Required]
-        public string Apepat { get; set; }
-        [Required]
-        public string Apemat { get; set; }
-        [Required]
-        public string Nom { get; set; }
-        [Required]
-        public string Idtal { get; set; }
-        [Required]
-        public string NomTaller { get; set; }
-        [Required]
-        public string Reqtal { get; set; }
+        [Display(Name="Descripción de Requisitos Taller")]
+        public string DescReqTal { get; set; }
+        public virtual Expositor CodigoExpositor {get; set;}
+        public virtual Taller CodigoTaller {get; set;}
 
     }
 }
