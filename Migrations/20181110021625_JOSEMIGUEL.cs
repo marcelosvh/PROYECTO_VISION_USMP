@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PROYECTOAPPVISIONVISUALSTUDIO.Migrations
+namespace PROYECTO_VISION_USMP.Migrations
 {
     public partial class JOSEMIGUEL : Migration
     {
