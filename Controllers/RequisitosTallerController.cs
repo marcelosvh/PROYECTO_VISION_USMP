@@ -156,6 +156,11 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        private bool RequisitosTallerExists(string id)
+        {
+            return _context.RequisitosTaller.Any(e => e.IDExpositor == id);
+        }
+
         
     }
 }
