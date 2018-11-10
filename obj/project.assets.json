@@ -7675,10 +7675,13 @@
 <<<<<<< HEAD
     "Microsoft.NETCore.Platforms/2.1.0": {
       "sha512": "TT+QCi9LcxGTjBssH7S7n5+8DVcwfG4DYgXX7Dk7+BfZ4oVHj8Q0CbYk9glzAlHLsSt3bYzol+fOdra2iu6GOw==",
+<<<<<<< HEAD
 =======
     "Microsoft.NETCore.Platforms/2.0.0": {
       "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
 >>>>>>> 596c4e5703fb90ccb04c636ec475146f1abf8d76
+=======
+>>>>>>> 2aac3bfeff05e2b1b34777121c51ce708e13141e
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -13280,15 +13283,20 @@
   },
   "packageFolders": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\FIA\\.nuget\\packages\\": {},
 =======
     "C:\\Users\\pc\\.nuget\\packages\\": {},
 >>>>>>> 596c4e5703fb90ccb04c636ec475146f1abf8d76
+=======
+    "C:\\Users\\jeanp_000\\.nuget\\packages\\": {},
+>>>>>>> 2aac3bfeff05e2b1b34777121c51ce708e13141e
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-1\\PROYECTO APP VISION VISUAL STUDIO.csproj",
@@ -13310,15 +13318,26 @@
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\pc\\Desktop\\VISIONFINAL\\PROYECTO_VISION_USMP\\obj\\",
 >>>>>>> 596c4e5703fb90ccb04c636ec475146f1abf8d76
+=======
+      "projectUniqueName": "C:\\Users\\jeanp_000\\Desktop\\Vision03-11-18\\PROYECTO_VISION_USMP\\PROYECTO APP VISION VISUAL STUDIO.csproj",
+      "projectName": "PROYECTO APP VISION VISUAL STUDIO",
+      "projectPath": "C:\\Users\\jeanp_000\\Desktop\\Vision03-11-18\\PROYECTO_VISION_USMP\\PROYECTO APP VISION VISUAL STUDIO.csproj",
+      "packagesPath": "C:\\Users\\jeanp_000\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jeanp_000\\Desktop\\Vision03-11-18\\PROYECTO_VISION_USMP\\obj\\",
+>>>>>>> 2aac3bfeff05e2b1b34777121c51ce708e13141e
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
 <<<<<<< HEAD
+<<<<<<< HEAD
         "C:\\Users\\FIA\\AppData\\Roaming\\NuGet\\NuGet.Config"
 =======
         "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\jeanp_000\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2aac3bfeff05e2b1b34777121c51ce708e13141e
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
 >>>>>>> 596c4e5703fb90ccb04c636ec475146f1abf8d76
       ],

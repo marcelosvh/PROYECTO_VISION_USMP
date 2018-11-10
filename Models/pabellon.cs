@@ -1,31 +1,26 @@
 using System;   
- 
-using System.ComponentModel.DataAnnotations; 
- 
-namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Models 
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
- 
+namespace PROYECTO_VISION_USMP.Models 
 { 
-    public class pabellon{
-
-    
-        [Required] 
-        public string IdPab { get; set; } 
-        [Required] 
-        public string Pab { get; set; } 
-        [Required] 
+    public class Pabellon
  
-        public string IdAula { get; set; } 
-        [Required]
-        public string Aula{ get; set; } 
+    { 
+
+        [Key]
         [Required] 
-        public string Piso { get; set; } 
+        [Display(Name="Codigo de Pabellón")]
+        public string IDPabellon { get; set; }
+        [ForeignKey("IDPabellon")] 
+        [Display(Name="Nombre de Pabellón")]
         [Required] 
-        public int Cap { get; set; } 
+        public string NomPab { get; set; } 
+
+           public ICollection<Taller> Talleres {get; set;}
+        public ICollection<Conferencia> Conferencias {get; set;}
+        
+ 
     }
-
-
 }
-
-
-

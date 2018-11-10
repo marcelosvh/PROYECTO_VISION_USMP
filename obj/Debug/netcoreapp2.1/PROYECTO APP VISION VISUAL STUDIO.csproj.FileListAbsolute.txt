@@ -97,6 +97,7 @@ C:\Users\marce\Documents\USMP - FIA\2018-2\PROGRAMACIÓN 1\LAB\PROYECTO APP VISI
 C:\Users\marce\Documents\USMP - FIA\2018-2\PROGRAMACIÓN 1\LAB\PROYECTO APP VISION VISUAL STUDIO\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.pdb
 C:\Users\marce\Documents\USMP - FIA\2018-2\PROGRAMACIÓN 1\LAB\PROYECTO APP VISION VISUAL STUDIO\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.csproj.CopyComplete
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\marce\Documents\USMP - FIA\2018-2\PROGRAMACIÓN 1\PROYECTO\PROYECTO_VISION_USMP-1\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.csprojAssemblyReference.cache
 C:\Users\marce\Documents\USMP - FIA\2018-2\PROGRAMACIÓN 1\PROYECTO\PROYECTO_VISION_USMP-1\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.csproj.CoreCompileInputs.cache
 C:\Users\marce\Documents\USMP - FIA\2018-2\PROGRAMACIÓN 1\PROYECTO\PROYECTO_VISION_USMP-1\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.RazorAssemblyInfo.cache
@@ -205,3 +206,54 @@ D:\MARYNADI\commits\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VI
 D:\MARYNADI\commits\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.dll
 D:\MARYNADI\commits\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.pdb
 >>>>>>> ca587a42fe8383f2d4e97e3eace090b450ce83a7
+=======
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.csprojAssemblyReference.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.csproj.CoreCompileInputs.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.RazorAssemblyInfo.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.RazorAssemblyInfo.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.AssemblyInfoInputs.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.AssemblyInfo.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.dll
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.pdb
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.TagHelpers.input.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.TagHelpers.output.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.RazorCoreGenerate.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\bin\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.deps.json
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\bin\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.runtimeconfig.json
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\bin\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.runtimeconfig.dev.json
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\bin\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.dll
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\bin\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.pdb
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\bin\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.Views.dll
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\bin\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.Views.pdb
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Administrador.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Alumno.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Aula.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Carrera.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Conferencia.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Crear_cuenta.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Documento_expositor.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Empresa.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Evento.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Expositor.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Pabellon.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Pabellon_Aula.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Requisitos_Conferencia.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Requisitos_Taller.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Taller.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Home\Tipo_Documento.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.RazorTargetAssemblyInfo.cache
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.RazorTargetAssemblyInfo.cs
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.Views.pdb
+C:\Users\jeanp_000\Desktop\Vision03-11-18\PROYECTO_VISION_USMP\obj\Debug\netcoreapp2.1\PROYECTO APP VISION VISUAL STUDIO.csproj.CopyComplete
+>>>>>>> 2aac3bfeff05e2b1b34777121c51ce708e13141e
