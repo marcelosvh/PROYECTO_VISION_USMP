@@ -148,7 +148,5 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         {
             return _context.TipoDocumento.Any(e => e.IDTip == id);
         }
-
-        
     }
 }
