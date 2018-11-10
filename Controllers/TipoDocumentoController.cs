@@ -42,6 +42,28 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(tipoDocumento);
         }
 
+        // GET: TipoDocumento/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: TipoDocumento/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IDTip,DescTip")] TipoDocumento tipoDocumento)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(tipoDocumento);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(tipoDocumento);
+        }
+
         
     }
 }
