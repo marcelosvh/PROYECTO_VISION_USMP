@@ -24,7 +24,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             var mvcContext = _context.Taller.Include(t => t.CodigoAula).Include(t => t.CodigoCarrera).Include(t => t.CodigoEvento).Include(t => t.CodigoPabellon);
             return View(await mvcContext.ToListAsync());
         }
-        
+
         // GET: Taller/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -173,8 +173,5 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         {
             return _context.Taller.Any(e => e.IDTaller == id);
         }
-
-        
-        
     }
 }
