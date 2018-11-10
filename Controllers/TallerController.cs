@@ -136,6 +136,28 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(taller);
         }
 
+        // GET: Taller/Delete/5
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var taller = await _context.Taller
+                .Include(t => t.CodigoAula)
+                .Include(t => t.CodigoCarrera)
+                .Include(t => t.CodigoEvento)
+                .Include(t => t.CodigoPabellon)
+                .SingleOrDefaultAsync(m => m.IDTaller == id);
+            if (taller == null)
+            {
+                return NotFound();
+            }
+
+            return View(taller);
+        }
+
         
         
     }
