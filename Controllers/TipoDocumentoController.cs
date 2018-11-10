@@ -64,6 +64,57 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(tipoDocumento);
         }
 
+        // GET: TipoDocumento/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tipoDocumento = await _context.TipoDocumento.SingleOrDefaultAsync(m => m.IDTip == id);
+            if (tipoDocumento == null)
+            {
+                return NotFound();
+            }
+            return View(tipoDocumento);
+        }
+
+        // POST: TipoDocumento/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDTip,DescTip")] TipoDocumento tipoDocumento)
+        {
+            if (id != tipoDocumento.IDTip)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(tipoDocumento);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TipoDocumentoExists(tipoDocumento.IDTip))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(tipoDocumento);
+        }
+
         
     }
 }
