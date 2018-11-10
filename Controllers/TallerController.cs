@@ -169,6 +169,11 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        private bool TallerExists(string id)
+        {
+            return _context.Taller.Any(e => e.IDTaller == id);
+        }
+
         
         
     }
