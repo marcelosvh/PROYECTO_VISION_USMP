@@ -1,0 +1,30 @@
+@model PROYECTO_VISION_USMP.Models.Pabellon
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pabellon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDPabellon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDPabellon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomPab)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomPab)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IDPabellon">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
