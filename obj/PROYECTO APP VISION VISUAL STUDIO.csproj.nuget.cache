@@ -1,17 +1,5 @@
 {
   "version": 1,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "dgSpecHash": "vLs5Mmfv26+XK4qfcIIzyoiN9oi7eQl0kaEwwihoTfpSfhf5rLf1H2IMZvEzA783YlBq+E9WrXHP4oKoq1dBbw==",
-=======
-  "dgSpecHash": "IhIU2b1uU1WCZMIJXMI7lwo+MsJh5vSe+HxcgCz78KZLX2geoxkSo0LxJoFr7f++Mkl0Sh7sqVmdvHHEq3rAAw==",
->>>>>>> ca587a42fe8383f2d4e97e3eace090b450ce83a7
-=======
-  "dgSpecHash": "T2VgsHfO/MjYO7N+UdANbmu9uh2DByvFNegZix1Tcny9fqKmUOV38/v0foi+8lNemLibZzjJ43FkPVIZYn86SA==",
->>>>>>> 596c4e5703fb90ccb04c636ec475146f1abf8d76
-=======
-  "dgSpecHash": "D965DRbRiNLwyLNRj1Eln8Heb6EAKR54CWqb868lY/JjUjCUDjT2xbHCCOJEDw7oIckFARSgybrpFiVO2FVH3A==",
->>>>>>> 2aac3bfeff05e2b1b34777121c51ce708e13141e
+  "dgSpecHash": "ev9IwDDegCjEe40K9cSJ1RGNSuQ7gfYUe9p4hP6r637kCdjoIE/mluMmpXqMTNCOOrtsntwSppDcvZOwIxxj0A==",
   "success": true
 }

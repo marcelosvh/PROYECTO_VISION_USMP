@@ -12,13 +12,7 @@ namespace PROYECTO_VISION_USMP.Models
         public string IDTip { get; set; }
         [ForeignKey("IDTip")] 
         [Required]
-<<<<<<< HEAD
-        public string Tip { get; set; }
-=======
         [Display(Name="Descripción de Tipo de Documento")]
         public string DescTip { get; set; }
-             
-        
->>>>>>> 596c4e5703fb90ccb04c636ec475146f1abf8d76
     }
 }
