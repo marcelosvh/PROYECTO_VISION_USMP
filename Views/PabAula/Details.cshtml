@@ -1,0 +1,42 @@
+@model PROYECTO_VISION_USMP.Models.PabAula
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PabAula</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPabellon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPabellon.IDPabellon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoAula)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodigoAula.IDAula)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Piso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Piso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Capacidad)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
