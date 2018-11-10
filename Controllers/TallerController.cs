@@ -47,6 +47,36 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(taller);
         }
 
+        // GET: Taller/Create
+        public IActionResult Create()
+        {
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula");
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera");
+            ViewData["IDEvento"] = new SelectList(_context.Evento, "IDEvento", "IDEvento");
+            ViewData["IDPabellon"] = new SelectList(_context.Pabellon, "IDPabellon", "IDPabellon");
+            return View();
+        }
+
+        // POST: Taller/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IDTaller,NomTaller,HoraIni,HoraFin,Fecha,IDPabellon,IDAula,IDCarrera,IDEvento")] Taller taller)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(taller);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDAula"] = new SelectList(_context.Aula, "IDAula", "IDAula", taller.IDAula);
+            ViewData["IDCarrera"] = new SelectList(_context.Carrera, "IDCarrera", "IDCarrera", taller.IDCarrera);
+            ViewData["IDEvento"] = new SelectList(_context.Evento, "IDEvento", "IDEvento", taller.IDEvento);
+            ViewData["IDPabellon"] = new SelectList(_context.Pabellon, "IDPabellon", "IDPabellon", taller.IDPabellon);
+            return View(taller);
+        }
+
         
         
     }
