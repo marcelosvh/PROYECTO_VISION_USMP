@@ -145,6 +145,17 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(requisitosTaller);
         }
 
+        // POST: RequisitosTaller/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var requisitosTaller = await _context.RequisitosTaller.SingleOrDefaultAsync(m => m.IDExpositor == id);
+            _context.RequisitosTaller.Remove(requisitosTaller);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         
     }
 }
