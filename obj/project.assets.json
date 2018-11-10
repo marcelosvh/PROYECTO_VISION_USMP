@@ -13231,11 +13231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-6\\PROYECTO APP VISION VISUAL STUDIO.csproj",
+      "projectUniqueName": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-7\\PROYECTO APP VISION VISUAL STUDIO.csproj",
       "projectName": "PROYECTO APP VISION VISUAL STUDIO",
-      "projectPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-6\\PROYECTO APP VISION VISUAL STUDIO.csproj",
+      "projectPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-7\\PROYECTO APP VISION VISUAL STUDIO.csproj",
       "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-6\\obj\\",
+      "outputPath": "C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-7\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13299,13 +13299,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\marce\\Documents\\USMP - FIA\\2018-2\\PROGRAMACIÓN 1\\PROYECTO\\PROYECTO_VISION_USMP-6\\obj\\PROYECTO APP VISION VISUAL STUDIO.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
