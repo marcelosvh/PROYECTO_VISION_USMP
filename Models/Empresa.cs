@@ -2,10 +2,21 @@ using System;
 
 namespace PROYECTO_APP_VISION_VISUAL_STUDIO {
     public class Empresa {
-        public string idemp {get;set;}
-        public string emp {get;set;}
-        public string coremp {get;set;}
-        public string pais {get;set;}
-        public string telf {get;set;}
+         [Key]
+        [Required]
+        [Display(Name="Codigo de Empresa")]
+        public string IDEmpresa { get; set;}
+        [Required]
+        [Display(Name="Codigo de Empresa")]
+        public string NomEmpresa { get; set;}
+        [Required]
+        [Display(Name="Correo de Empresa")]
+        [EmailAddress]
+        public string CorreoEmpresa {get; set;}
+        [Required]
+        public string Pais {get; set;}
+        [Required]
+        public int Telefono { get; set;}
+        public ICollection<Expositor> Expositores {get;set;}
     }
 }
