@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using PROYECTO_VISION_USMP.Models;
 
 namespace PROYECTO_APP_VISION_VISUAL_STUDIO {
     public class Carrera {
