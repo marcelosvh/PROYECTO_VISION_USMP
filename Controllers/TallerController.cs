@@ -158,6 +158,17 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(taller);
         }
 
+        // POST: Taller/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var taller = await _context.Taller.SingleOrDefaultAsync(m => m.IDTaller == id);
+            _context.Taller.Remove(taller);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         
         
     }
