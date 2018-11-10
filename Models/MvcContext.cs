@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using PROYECTO_APP_VISION_VISUAL_STUDIO.Models;
 using PROYECTO_VISION_USMP.Models;
 
     public class MvcContext : DbContext
