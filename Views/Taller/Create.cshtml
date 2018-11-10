@@ -1,0 +1,66 @@
+@model PROYECTO_VISION_USMP.Models.Taller
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Taller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IDTaller" class="control-label"></label>
+                <input asp-for="IDTaller" class="form-control" />
+                <span asp-validation-for="IDTaller" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomTaller" class="control-label"></label>
+                <input asp-for="NomTaller" class="form-control" />
+                <span asp-validation-for="NomTaller" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraIni" class="control-label"></label>
+                <input asp-for="HoraIni" class="form-control" />
+                <span asp-validation-for="HoraIni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraFin" class="control-label"></label>
+                <input asp-for="HoraFin" class="form-control" />
+                <span asp-validation-for="HoraFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDPabellon" class="control-label"></label>
+                <select asp-for="IDPabellon" class ="form-control" asp-items="ViewBag.IDPabellon"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDAula" class="control-label"></label>
+                <select asp-for="IDAula" class ="form-control" asp-items="ViewBag.IDAula"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDCarrera" class="control-label"></label>
+                <select asp-for="IDCarrera" class ="form-control" asp-items="ViewBag.IDCarrera"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDEvento" class="control-label"></label>
+                <select asp-for="IDEvento" class ="form-control" asp-items="ViewBag.IDEvento"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
