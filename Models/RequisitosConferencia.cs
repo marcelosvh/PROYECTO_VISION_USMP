@@ -1,7 +1,8 @@
 using System;   
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations; 
- 
+using System.ComponentModel.DataAnnotations;
+using PROYECTO_APP_VISION_VISUAL_STUDIO;
+
 namespace PROYECTO_VISION_USMP.Models 
 { 
     public class RequisitosConferencia
