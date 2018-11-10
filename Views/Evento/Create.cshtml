@@ -1,0 +1,45 @@
+@model PROYECTO_VISION_USMP.Models.Evento
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Evento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IDEvento" class="control-label"></label>
+                <input asp-for="IDEvento" class="form-control" />
+                <span asp-validation-for="IDEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemaEvento" class="control-label"></label>
+                <input asp-for="TemaEvento" class="form-control" />
+                <span asp-validation-for="TemaEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_Ini" class="control-label"></label>
+                <input asp-for="Fecha_Ini" class="form-control" />
+                <span asp-validation-for="Fecha_Ini" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_Fin" class="control-label"></label>
+                <input asp-for="Fecha_Fin" class="form-control" />
+                <span asp-validation-for="Fecha_Fin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

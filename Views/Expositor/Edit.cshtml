@@ -1,0 +1,66 @@
+@model PROYECTO_VISION_USMP.Models.Expositor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Expositor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IDExpositor" />
+            <div class="form-group">
+                <label asp-for="ApePat" class="control-label"></label>
+                <input asp-for="ApePat" class="form-control" />
+                <span asp-validation-for="ApePat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApeMat" class="control-label"></label>
+                <input asp-for="ApeMat" class="form-control" />
+                <span asp-validation-for="ApeMat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomExp" class="control-label"></label>
+                <input asp-for="NomExp" class="form-control" />
+                <span asp-validation-for="NomExp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nacionalidad" class="control-label"></label>
+                <input asp-for="Nacionalidad" class="form-control" />
+                <span asp-validation-for="Nacionalidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoOrador" class="control-label"></label>
+                <input asp-for="TipoOrador" class="form-control" />
+                <span asp-validation-for="TipoOrador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorreoExp" class="control-label"></label>
+                <input asp-for="CorreoExp" class="form-control" />
+                <span asp-validation-for="CorreoExp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orden" class="control-label"></label>
+                <input asp-for="Orden" class="form-control" />
+                <span asp-validation-for="Orden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDEmpresa" class="control-label"></label>
+                <select asp-for="IDEmpresa" class="form-control" asp-items="ViewBag.IDEmpresa"></select>
+                <span asp-validation-for="IDEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
