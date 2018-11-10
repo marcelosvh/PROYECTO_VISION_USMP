@@ -70,6 +70,61 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(requisitosTaller);
         }
 
+        // GET: RequisitosTaller/Edit/5
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var requisitosTaller = await _context.RequisitosTaller.SingleOrDefaultAsync(m => m.IDExpositor == id);
+            if (requisitosTaller == null)
+            {
+                return NotFound();
+            }
+            ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", requisitosTaller.IDExpositor);
+            ViewData["IDTaller"] = new SelectList(_context.Set<Taller>(), "IDTaller", "IDTaller", requisitosTaller.IDTaller);
+            return View(requisitosTaller);
+        }
+
+        // POST: RequisitosTaller/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("IDExpositor,IDTaller,DescReqTal")] RequisitosTaller requisitosTaller)
+        {
+            if (id != requisitosTaller.IDExpositor)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(requisitosTaller);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!RequisitosTallerExists(requisitosTaller.IDExpositor))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["IDExpositor"] = new SelectList(_context.Expositor, "IDExpositor", "IDExpositor", requisitosTaller.IDExpositor);
+            ViewData["IDTaller"] = new SelectList(_context.Set<Taller>(), "IDTaller", "IDTaller", requisitosTaller.IDTaller);
+            return View(requisitosTaller);
+        }
+
         
     }
 }
