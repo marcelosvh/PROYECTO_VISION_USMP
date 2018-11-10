@@ -24,6 +24,7 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             var mvcContext = _context.RequisitosTaller.Include(r => r.CodigoExpositor).Include(r => r.CodigoTaller);
             return View(await mvcContext.ToListAsync());
         }
+
         // GET: RequisitosTaller/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -160,7 +161,5 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
         {
             return _context.RequisitosTaller.Any(e => e.IDExpositor == id);
         }
-
-        
     }
 }
