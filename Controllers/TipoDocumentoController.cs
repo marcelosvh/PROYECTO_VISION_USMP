@@ -133,6 +133,17 @@ namespace PROYECTO_APP_VISION_VISUAL_STUDIO.Controllers
             return View(tipoDocumento);
         }
 
+        // POST: TipoDocumento/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var tipoDocumento = await _context.TipoDocumento.SingleOrDefaultAsync(m => m.IDTip == id);
+            _context.TipoDocumento.Remove(tipoDocumento);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         
     }
 }
